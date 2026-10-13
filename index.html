@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Міні-вікно</title>
+    <!-- Підключаємо скрипт Telegram -->
+    <script src="https://telegram.org"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--tg-theme-bg-color, #ffffff); /* Адаптація під тему Telegram */
+            color: var(--tg-theme-text-color, #000000);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: var(--tg-theme-button-color, #2481cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Вітаємо у міні-вікні!</h2>
+        <p>Це ваш текст, який користувач побачить одразу після переходу за посиланням.</p>
+        <button onclick="Telegram.WebApp.close();">Закрити вікно</button>
+    </div>
+
+    <script>
+        // Ініціалізація WebApp та повідомлення Telegram, що додаток готовий
+        Telegram.WebApp.ready();
+        // Автоматично розгортає вікно на максимум (опціонально)
+        Telegram.WebApp.expand(); 
+    </script>
+</body>
+</html>
