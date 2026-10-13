@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light dark">
     <title>Правила поведения</title>
     <!-- Подключаем скрипт Telegram -->
     <script src="https://telegram.org"></script>
     <style>
-        /* Настройки для темной темы по умолчанию */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #1c1c1e;
-                color: #ffffff;
-            }
-            .divider {
-                color: #545456;
-            }
-        }
-
+        /* Фиксированные цвета для всего приложения (игнорируем темную тему ТГ) */
         body {
-            font-family: "Georgia", "Times New Roman", serif; /* Более элегантный книжный шрифт */
-            background-color: var(--tg-theme-bg-color, window); 
-            color: var(--tg-theme-text-color, windowtext);
+            font-family: "Georgia", "Times New Roman", serif;
+            background-color: #4a5a6a !important; /* Насыщенный сине-серый фон */
+            color: #000000 !important; /* Строго черный цвет текста */
             padding: 16px;
             margin: 0;
-            font-size: 18px;
+            font-size: 19px; 
             line-height: 1.6;
+            /* Белая аккуратная обводка/подсветка текста */
+            text-shadow: 
+                -1px -1px 0 #ffffff,  
+                 1px -1px 0 #ffffff,
+                -1px  1px 0 #ffffff,
+                 1px  1px 0 #ffffff,
+                 0px  0px 4px #ffffff;
         }
 
         .container {
-            /* Красивая двойная рамка вокруг правил */
-            border: 4px double var(--tg-theme-button-color, #2481cc);
+            /* Темно-синяя двойная рамка */
+            border: 4px double #1a2a3a;
             padding: 28px 20px;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            background: var(--tg-theme-bg-color, #ffffff);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+            background-color: #5c6c7d !important; /* Чуть более светлый сине-серый фон внутри карточки */
+            margin-bottom: 20px;
         }
 
         .header-box {
@@ -44,21 +41,23 @@
         }
 
         h2 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             margin: 0;
-            color: var(--tg-theme-button-color, #2481cc);
+            color: #1a2a3a !important; /* Темно-синий заголовок */
             letter-spacing: 2px;
             text-transform: uppercase;
+            text-shadow: 0px 0px 8px #ffffff;
         }
 
-        /* Красивый узор под заголовком */
+        /* Узор под заголовком */
         .header-divider {
             text-align: center;
             margin: 10px 0 25px 0;
             font-size: 20px;
-            color: var(--tg-theme-button-color, #2481cc);
+            color: #1a2a3a;
             letter-spacing: 5px;
+            text-shadow: none;
         }
 
         ul {
@@ -69,53 +68,30 @@
 
         li {
             margin-bottom: 0;
-            text-align: justify; /* Выравнивание текста по ширине для строгого вида */
+            text-align: justify; /* Выравнивание по ширине */
         }
 
-        /* Элегантные узоры-разделители между пунктами правил */
+        /* Узоры-разделители между пунктами */
         .divider {
             text-align: center;
             margin: 15px 0;
             font-size: 14px;
-            color: var(--tg-theme-hint-color, #ccc);
+            color: #1a2a3a;
             user-select: none;
             letter-spacing: 3px;
+            text-shadow: none; 
         }
 
+        /* Красивый темно-красный цвет для акцентов и бана */
         .highlight {
             font-weight: bold;
-            color: #ff3b30; /* Красивый красный для предупреждений */
+            color: #8b0000; 
         }
         
+        /* Темно-синий для важных фраз */
         .accent {
             font-weight: bold;
-            color: var(--tg-theme-button-color, #2481cc);
-        }
-
-        .button-wrapper {
-            text-align: center;
-            margin-top: 35px;
-        }
-
-        button {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 18px;
-            background-color: var(--tg-theme-button-color, #2481cc);
-            color: var(--tg-theme-button-text-color, #ffffff);
-            border: none;
-            padding: 14px 40px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.2s ease;
-            width: 100%;
-            max-width: 280px;
-            box-shadow: 0 4px 12px rgba(36, 129, 204, 0.2);
-        }
-
-        button:active {
-            transform: scale(0.98);
-            opacity: 0.9;
+            color: #1a2a3a;
         }
     </style>
 </head>
@@ -170,15 +146,11 @@
             <li>Выпрашивать голосовые сообщения у admin`а <span class="highlight">запрещено</span>. Они отправляются только по личному желанию. Если admin отказал — не продолжайте просить.</li>
             <div class="divider">― ◈ ―</div>
             
-            <li>Личные или романтические отношения между пользователем и admin`ом <span class="highlight">запрещены</span>.</li>
+            <li>Личные или romantic`еские отношения между пользователем и admin`ом <span class="highlight">запрещены</span>.</li>
             <div class="divider">― ◈ ―</div>
             
             <li>Маты <span class="accent">разрешены</span>.</li>
         </ul>
-
-        <div class="button-wrapper">
-            <button onclick="Telegram.WebApp.close();">Я ознакомился(-лась)</button>
-        </div>
     </div>
 
     <script>
