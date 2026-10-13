@@ -7,29 +7,45 @@
     <!-- Підключаємо скрипт Telegram -->
     <script src="https://telegram.org"></script>
     <style>
+    /* Налаштування для темної теми за замовчуванням (якщо месенджер або телефон у нічному режимі) */
+    @media (prefers-color-scheme: dark) {
         body {
-            font-family: Arial, sans-serif;
-            background-color: var(--tg-theme-bg-color, #ffffff); /* Адаптація під тему Telegram */
-            color: var(--tg-theme-text-color, #000000);
-            padding: 20px;
-            text-align: center;
+            background-color: #1c1c1e;
+            color: #ffffff;
         }
-        .container {
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        button {
-            background-color: var(--tg-theme-button-color, #2481cc);
-            color: var(--tg-theme-button-text-color, #ffffff);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-    </style>
+    }
+
+    /* Налаштування з використанням офіційних змінних Telegram */
+    body {
+        font-family: Arial, sans-serif;
+        /* Спочатку бере колір ТГ, якщо його немає — колір системи */
+        background-color: var(--tg-theme-bg-color, window); 
+        color: var(--tg-theme-text-color, windowtext);
+        padding: 20px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .container {
+        border: 1px solid var(--tg-theme-hint-color, #ccc);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        background-color: var(--tg-theme-secondary-bg-color, transparent);
+    }
+
+    button {
+        background-color: var(--tg-theme-button-color, #2481cc);
+        color: var(--tg-theme-button-text-color, #ffffff);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+</style>
+
 </head>
 <body>
 
