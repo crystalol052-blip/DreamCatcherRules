@@ -1,65 +1,188 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Міні-вікно</title>
-    <!-- Підключаємо скрипт Telegram -->
+    <meta name="color-scheme" content="light dark">
+    <title>Правила поведения</title>
+    <!-- Подключаем скрипт Telegram -->
     <script src="https://telegram.org"></script>
     <style>
-    /* Налаштування для темної теми за замовчуванням (якщо месенджер або телефон у нічному режимі) */
-    @media (prefers-color-scheme: dark) {
-        body {
-            background-color: #1c1c1e;
-            color: #ffffff;
+        /* Настройки для темной темы по умолчанию */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1c1c1e;
+                color: #ffffff;
+            }
+            .divider {
+                color: #545456;
+            }
         }
-    }
 
-    /* Налаштування з використанням офіційних змінних Telegram */
-    body {
-        font-family: Arial, sans-serif;
-        /* Спочатку бере колір ТГ, якщо його немає — колір системи */
-        background-color: var(--tg-theme-bg-color, window); 
-        color: var(--tg-theme-text-color, windowtext);
-        padding: 20px;
-        text-align: center;
-        margin: 0;
-    }
+        body {
+            font-family: "Georgia", "Times New Roman", serif; /* Более элегантный книжный шрифт */
+            background-color: var(--tg-theme-bg-color, window); 
+            color: var(--tg-theme-text-color, windowtext);
+            padding: 16px;
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    h2 {
-        font-size: 12px;       /* Робить літери великими */
-        font-weight: bold;     /* Робить текст жирним */
-        margin-bottom: 10px;
-    }
+        .container {
+            /* Красивая двойная рамка вокруг правил */
+            border: 4px double var(--tg-theme-button-color, #2481cc);
+            padding: 28px 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            background: var(--tg-theme-bg-color, #ffffff);
+        }
 
-    p {
-        font-size: 10px;       /* Робить літери великими */
-        font-weight: bold;     /* Робить текст жирним */
-        margin-bottom: 10px;
-    }
+        .header-box {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0;
+            color: var(--tg-theme-button-color, #2481cc);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Красивый узор под заголовком */
+        .header-divider {
+            text-align: center;
+            margin: 10px 0 25px 0;
+            font-size: 20px;
+            color: var(--tg-theme-button-color, #2481cc);
+            letter-spacing: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0;
+            text-align: justify; /* Выравнивание текста по ширине для строгого вида */
+        }
+
+        /* Элегантные узоры-разделители между пунктами правил */
+        .divider {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 14px;
+            color: var(--tg-theme-hint-color, #ccc);
+            user-select: none;
+            letter-spacing: 3px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ff3b30; /* Красивый красный для предупреждений */
+        }
         
-    .container {
-        border: 1px solid var(--tg-theme-hint-color, #ccc);
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        background-color: var(--tg-theme-secondary-bg-color, transparent);
-    }
-        
-</style>
+        .accent {
+            font-weight: bold;
+            color: var(--tg-theme-button-color, #2481cc);
+        }
 
+        .button-wrapper {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        button {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 18px;
+            background-color: var(--tg-theme-button-color, #2481cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
+            border: none;
+            padding: 14px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 4px 12px rgba(36, 129, 204, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Приветствую вас в разделе правил для пользователей нашего бота</h2>
-        <p>1.1</p>
+        <div class="header-box">
+            <h2>Правила бота</h2>
+            <div class="header-divider">✥ ═══ ✥</div>
+        </div>
+        
+        <ul>
+            <li>Всегда ставьте <span class="accent">#тег вашего admin`а</span> на каждое сообщение, после голосовых и желательно даже после стикеров, иначе ваш admin может просто потерять вас среди других пользователей.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Запрещается спамить в бот. В первый раз — предупреждение, в случае повтора будет выдан <span class="highlight">бан</span>.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>В случае оскорбления администрации будет незамедлительно выдан <span class="highlight">бан</span>.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li><span class="highlight">Запрещено</span> скидывать фото интимного характера / расчлененку и т.д. Скидывать можно только безобидные для просмотра фото и скриншоты.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Разглашение вашей личной информации лежит на вашей ответственности. За утечку ваших данных мы ответственности не несем.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Контент <span class="highlight">18+ под строгим запретом</span>: тексты, связанные с этим, голосовые сообщения, фото, стикеры и гифки.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li><span class="highlight">Запрещено</span> обсуждение тем политики и религии.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Сменить admin`а можно <span class="accent">лишь 3 раза</span> за всё время.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Если admin вам <span class="highlight">НЕ ОТВЕТИЛ</span> в течение 10-15 минут, просто продублируйте сообщение. Не спамьте!</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Проверки должны быть предварительно согласованы с влд или совлд.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Помните, что admin`ы — тоже люди, они могут отдыхать или быть занятыми.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Выпрашивание личной информации <span class="highlight">категорически запрещено</span>. Admin не может говорить о своей внешности, давать свой юз или соцсети. Он не может писать вам в ЛС — общение возможно только внутри бота.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li><span class="highlight">Запрещено</span> отправлять сюда юзернеймы, независимо от того, ваш это юз, друга или кого-то другого.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Выпрашивать голосовые сообщения у admin`а <span class="highlight">запрещено</span>. Они отправляются только по личному желанию. Если admin отказал — не продолжайте просить.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Личные или романтические отношения между пользователем и admin`ом <span class="highlight">запрещены</span>.</li>
+            <div class="divider">― ◈ ―</div>
+            
+            <li>Маты <span class="accent">разрешены</span>.</li>
+        </ul>
+
+        <div class="button-wrapper">
+            <button onclick="Telegram.WebApp.close();">Я ознакомился(-лась)</button>
+        </div>
     </div>
 
     <script>
-        // Ініціалізація WebApp та повідомлення Telegram, що додаток готовий
         Telegram.WebApp.ready();
-        // Автоматично розгортає вікно на максимум (опціонально)
         Telegram.WebApp.expand(); 
     </script>
 </body>
